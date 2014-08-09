@@ -29,7 +29,21 @@ TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := cyanogenmod_i9100_defconfig
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := galaxys2,i9100,GT-I9100,GT-I9100M,GT-I9100P,GT-I9100T,SC-02C
+TARGET_OTA_ASSERT_DEVICE := galaxys2,i9100,GT-I9100,GT-I9100M,GT-I9100P,GT-I9100T,SC-02C,SHW-M250S,SHW-M250K
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/i9100/BoardConfigVendor.mk
+
+# TWRP flags
+DEVICE_RESOLUTION := 480x800
+TW_FLASH_FROM_STORAGE := true
+TW_INTERNAL_STORAGE_PATH := "/sdcard"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CUSTOM_POWER_BUTTON := 116
+TW_INCLUDE_FUSE_EXFAT := true
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/galaxys2-common/recovery/graphics.c
+TW_MAX_BRIGHTNESS := 255
